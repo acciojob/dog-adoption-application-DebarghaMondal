@@ -1,16 +1,119 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Ownership Form</title>
+<style>
+    body {
+        font-family: arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    .form-container {
+        max-width: 500px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+    }
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    .form-group .checkbox-label {
+        margin-left: 5px;
+    }
+    .form-group .checkbox-group {
+        margin-top: 5px;
+    }
+    .form-group .multi-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height: 120px;
+        overflow-y: auto;
+    }
+    .form-group .submit-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group .submit-btn:hover {
+        background-color: #45a049;
+    }
+</style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+<div class="form-container">
+    <h2>Dog Ownership Form</h2>
+    <form action="/submit-form" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+        </div>
+        <div class="form-group">
+            <label>Have you ever lived with a Dog before?</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="dog-experience" name="dog_experience" value="Have you ever lived with a Dog before?" required>
+                <label class="checkbox-label" for="dog-experience">Yes, I have lived with a dog before</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="breeds">Please select your preferred breeds:</label>
+            <select id="breeds" name="preferred_breeds[]" class="multi-select" multiple required>
+                <option value="Labrador">Labrador</option>
+                <option value="Golden Retriever">Golden Retriever</option>
+                <option value="German Shepherd">German Shepherd</option>
+                <option value="Poodle">Poodle</option>
+                <option value="Bulldog">Bulldog</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
 
 </body>
-
 </html>
